@@ -9,9 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
     @Autowired
     JdbcTemplate jdbcTemplate;
-
+//测试数据库连接
     @RequestMapping("/hello")
-
     public String hello(){
         // 通过jdbcTemplate查询数据库
         String sql = "SELECT name FROM user WHERE id = ?";
@@ -19,5 +18,6 @@ public class HelloController {
                 sql, new Object[] { 2 }, String.class);
         return "Hello " + mobile;
     }
+//
 
 }
